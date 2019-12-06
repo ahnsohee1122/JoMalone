@@ -28,20 +28,20 @@
                         float:left;
                         padding: 20px;
                         overflow-x:scroll;
-                        border:1px solid black;
+                   
                     }
 
 
 
 
-                    #eachBox{border-bottom: 1px solid black;}
+                   #eachBox{ margin:10px 10px;}
                     #oriCode{display:none;}
 
                     .firstCol{background-color:#1e2d47; color:white; font-weight:bold; text-align:center; width:100px;}
                     .secondCol{width:300px;}
                     .secondCol_inner{width:100%;}
 
-                    button{margin:2px;}
+                    button{margin:2px; background-color:lightgray; border-radius:3px; border:1px solid black}
 
 
 
@@ -62,15 +62,6 @@
                     <div id="container">
 
 
-
-                        <c:choose>
-                            <c:when test="${productList.size() == 0 }">
-                                등록된 상품이 없습니다.
-                            </c:when>
-                            <c:otherwise>
-                                <c:forEach items="${productList }" var="dto">
-
-                                    <form action="${pageContext.request.contextPath}/modifyProduct.admini" method="post" id="frm">
                                         <!--
 <div id=eachBox>
 <div>상품 코드:<input value="${dto.productCode }" name="fakeProductCode" disabled="disabled"></div>
@@ -87,10 +78,16 @@
 </div>
 -->
 
+                        <c:choose>
+                            <c:when test="${productList.size() == 0 }">
+                                등록된 상품이 없습니다.
+                            </c:when>
+                            <c:otherwise>
+                                <c:forEach items="${productList }" var="dto">
 
+                                    <form action="${pageContext.request.contextPath}/modifyProduct.admini" method="post" id="frm">
 
                                         <table id=eachBox>
-
                                             <tr>
                                                 <td class=firstCol>상품 코드</td>
                                                 <td class=secondCol><input value="${dto.productCode }" name="fakeProductCode" disabled="disabled" class=secondCol_inner></td>
