@@ -382,7 +382,7 @@
 			}
 			
 			if(phoneregex.exec(phone2) == null || phoneregex.exec(phone3) == null){
-				alert("숫자만 입력해주세요.");
+				alert("4자리 숫자를 입력해주세요.");
 				if(phoneregex.exec(phone2) == null){
 				$("#phone2").focus();
 				}else{

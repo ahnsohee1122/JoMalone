@@ -109,7 +109,7 @@ public class MembersDAO {
 	}
 	
 	public List<MembersDTO> selectAll() throws Exception{
-		String sql = "select * from members";
+		String sql = "select * from members order by enrolldate";
 		try(
 				Connection con = this.getConnection();
 				PreparedStatement pstat = con.prepareStatement(sql);
@@ -399,11 +399,6 @@ public class MembersDAO {
 		}
 	}
 
-public Timestamp getTimestamp(String str){
-	
-		return Timestamp.valueOf(str);
-	
-};
 
 
 	

@@ -230,7 +230,7 @@
 		if(${dto.logintype == 'normal'}){
 			$("#pwform").submit();
 		}else{ 
-			location.href = "del.sign";
+			location.href = "logout.klog";
 		}
 		
 	});

@@ -158,6 +158,7 @@ public class Kcallback extends HttpServlet {
 						if(result) { //이미 아이디가 있으면 그냥 로그인
 							
 							request.getSession().setAttribute("loginInfo", id);
+							request.getSession().setAttribute("access_token", access_token);
 							dao.lastlogin(id);
 							request.getSession().setAttribute("name", name);
 							request.getRequestDispatcher("home.jsp").forward(request, response);
@@ -168,6 +169,7 @@ public class Kcallback extends HttpServlet {
 							dao.kakaoFirLogin(ndto);
 							dao.lastlogin(id);
 							request.getSession().setAttribute("loginInfo", id);
+							request.getSession().setAttribute("access_token", access_token);
 							request.getSession().setAttribute("name", name);
 							request.getRequestDispatcher("home.jsp").forward(request, response);
 
